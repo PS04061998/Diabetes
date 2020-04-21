@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:fillViewport="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/background"
+        tools:context=".Menu">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+
+            android:textSize="40sp"
+            />
+        <Button
+            android:id="@+id/heart_btn"
+            android:text="Target Heart Rate"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="heartbeat"
+            />
+        <Button
+            android:id="@+id/calorie_btn"
+            android:text="Calorie Level"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="btn_Calorielevel"
+            />
+        <Button
+            android:id="@+id/blood_btn"
+            android:text="Blood Volume"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="btn_bloodvolume"
+            />
+        <Button
+            android:id="@+id/tips_btn"
+            android:text="Healthy Tips"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="btn_healthytips"
+            />
+        <Button
+            android:id="@+id/diabetes_btn"
+            android:text="Diabetes"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="btn_diabetes"
+            />
+       <Button
+            android:id="@+id/buttonLogout"
+            android:text="Logout"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginTop="20dp"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:onClick="btn_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </LinearLayout>
+</ScrollView>

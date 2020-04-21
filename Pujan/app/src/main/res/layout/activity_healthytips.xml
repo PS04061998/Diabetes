@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:fillViewport="true">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:background="@color/background"
+        android:layout_height="match_parent"
+        tools:context=".login">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Healthy Tips"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginTop="20dp"
+            android:text="Maintain a healthy diet.\nBe physically active regularly.\nMaintain a normal body weight.\nAvoid smoking.\nControl your blood pressure.\nTreat your other diseases."
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginTop="20dp"
+            android:text="Eat a variety of foods.\nBase your diet on plenty of foods rich in carbohydrates.\nReplace saturated with unsaturated fat.\nEnjoy plenty of fruits and vegetables.\nReduce salt and sugar intake."
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginTop="20dp"
+            android:text="Eat regularly, control the portion size.\nDrink plenty of fluids.\nMaintain a healthy body weight.\nGet on the move, make it a habit!.\nStart now! And keep changing gradually."
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round"
+            android:textColor="#fff"
+            android:onClick="btn_back"/>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

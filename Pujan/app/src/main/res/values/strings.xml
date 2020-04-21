@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Healthy Life </string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="logout">Logout</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="from_bmi">From BMI</string>
+    <string name="hemoglobina1c">HemoglobinA1C</string>
+    <string name="random_glucose">Random Glucose</string>
+    <string name="diabetes">Diabetes</string>
+    <string name="calculate">Calculate</string>
+    <string name="blood_volume">Blood Volume</string>
+    <string name="bmi">BMI</string>
+    <string name="calculator">Calculator</string>
+    <string name="weight_kg">WEIGHT (KG)</string>
+    <string name="in_kgs">IN KGs</string>
+    <string name="height_cm">HEIGHT (CM)</string>
+    <string name="in_cms">IN CMs</string>
+    <string name="bmi_calculator">Bmi Calculator</string>
+    <string name="main">Main</string>
+    <string name="back">Back</string>
+    <string name="fasting_glucose">Fasting Glucose</string>
+    <string name="blood_glucose_value">Blood Glucose value</string>
+    <string name="_126_mg_dl"><![CDATA[>126 mg/dl]]></string>
+    <string name="_100_to_125_mg_dl">100 to 125 mg/dl</string>
+    <string name="_70_to_99_mg_dl">70 to 99 mg/dl</string>
+    <string name="check_result">Check Result</string>
+    <string name="workout_intensity">Workout Intensity</string>
+    <string name="choose_one">Choose One</string>
+
+    <string-array name="items_class">
+        <item>Choose one option</item>
+        <item>Low Intensity</item>
+        <item>Moderate Intensity</item>
+        <item>Vigorous Intensity</item>
+    </string-array>
+
+
+    <string-array name="item_class">
+        <item>Choose one option</item>
+        <item>little or no exercise</item>
+        <item>light exercise or sports 1-2 days/week</item>
+        <item>moderate exercise or sports 2-3 days/week</item>
+        <item>hard exercise or sports 4-5 days/week</item>
+        <item>very hard exercise, physical job or sports 6-7 days/week</item>
+        <item>Professional athlete</item>
+    </string-array>
+
+</resources>

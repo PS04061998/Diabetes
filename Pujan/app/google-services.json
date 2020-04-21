@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "685154197299",
+    "firebase_url": "https://diabetes-a198c.firebaseio.com",
+    "project_id": "diabetes-a198c",
+    "storage_bucket": "diabetes-a198c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685154197299:android:d445671807b0221820a846",
+        "android_client_info": {
+          "package_name": "com.example.healthylife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685154197299-pkm685vjmn03nqvsrq998eqg0h9os6c1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQm4ChynJVh4_MwEQ_HMnU3P4hz1bD9ZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685154197299-pkm685vjmn03nqvsrq998eqg0h9os6c1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
