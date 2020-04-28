@@ -9,39 +9,25 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+//import com.squareup.okhttp.Request;
+//import com.squareup.okhttp.Response;
+import com.android.volley.Response;
+import com.android.volley.Request;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 //Main activity class start here
 public class bmi extends AppCompatActivity {
 
     //Define layout
-    private RequestQueue requestQueue;
-
-    int age ;
-    int glucose ;
-    int pressure ;
-    float bmiValue ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +35,6 @@ public class bmi extends AppCompatActivity {
         setContentView(R.layout.activity_bmi);
 
     }
-
-
-
     public void btn_menu(View view) {
         startActivity(new Intent(getApplicationContext(),Menu.class));
         finish();
@@ -141,11 +124,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Submit(abc);
-
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit(abc,bmiValue,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -163,11 +142,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Submit(abc);
-
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit(abc,bmiValue,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -185,11 +160,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Submit(abc);
-
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit(abc,bmiValue,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -207,9 +178,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit(abc,bmiValue,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -227,9 +196,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit(abc,bmiValue,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -251,9 +218,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit1(abc,bmiValue,pregnancy,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -272,9 +237,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit1(abc,bmiValue,pregnancy,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -293,9 +256,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit1(abc,bmiValue,pregnancy,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -315,9 +276,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit1(abc,bmiValue,pregnancy,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -336,9 +295,7 @@ public class bmi extends AppCompatActivity {
                                 "Glucose :" + glucose + "\n"+
                                 "Pressure :" + pressure ;
 
-                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
-                        intent.putExtra("key", abc);
-                        startActivity(intent);
+                        Submit1(abc,bmiValue,pregnancy,age,glucose,pressure);
 
                         e1.getText().clear();
                         e2.getText().clear();
@@ -359,53 +316,102 @@ public class bmi extends AppCompatActivity {
 
     }
 
-    public void Submit(String abc) {
 
-        MediaType MEDIA_TYPE = MediaType.parse("application/json");
-        String url = "http://127.0.0.1:5000/predict";
+    public void Submit(String abc, float bmiValue,int age,int glucose,int pressure)
+    {
 
-        OkHttpClient client = new OkHttpClient();
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://192.168.1.4:5000/predict";
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        String abc = "bmiValue" + "-" + bmiValue + "\n"+
+                                "Age :" + age + "\n"+
+                                "Glucose :" + glucose + "\n"+
+                                "Pressure :" + pressure + "\n"+
+                                response;
 
-        JSONObject postdata = new JSONObject();
-        try {
-            postdata.put("bmiValue", bmiValue);
-            postdata.put("Age", age);
-            postdata.put("glucose", glucose);
-            postdata.put("pressure", pressure);
-
-        } catch(JSONException e){
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        RequestBody body = RequestBody.create(MEDIA_TYPE, postdata.toString());
-
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .header("Accept", "application/json")
-                .header("Content-Type", "application/json")
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
+                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
+                        intent.putExtra("key", abc);
+                        startActivity(intent);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Log.e("VOLLEY", error.toString());
+                    }
+                }
+        ) {
             @Override
-            public void onFailure(Request request, IOException e) {
-                String mMessage = e.getMessage().toString();
-                Log.w("failure Response", mMessage);
-                //call.cancel();
-
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("bmiValue", String.valueOf(bmiValue));
+                params.put("pregnancy", "0");
+                params.put("age", String.valueOf(age));
+                params.put("glucose", String.valueOf(glucose));
+                params.put("pressure", String.valueOf(pressure));
+                return params;
             }
+        };
+        queue.add(postRequest);
+    }
 
+    public void Submit1(String abc, float bmiValue, int pregnancy , int age, int glucose, int pressure )
+    {
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://192.168.1.4:5000/predict";
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        String abc = "bmiValue" + "-" + bmiValue + "\n"+
+                                "Pregnancy :" + pregnancy + "\n"+
+                                "Age :" + age + "\n"+
+                                "Glucose :" + glucose + "\n"+
+                                "Pressure :" + pressure + "\n"+
+                                response;
+
+                        Intent intent = new Intent(bmi.this, BmioutputActivity.class);
+                        intent.putExtra("key", abc);
+                        startActivity(intent);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Log.e("VOLLEY", error.toString());
+                    }
+                }
+        ) {
             @Override
-            public void onResponse(Response response) throws IOException {
-                String mMessage = response.body().string();
-                Log.e("failure Start", mMessage);
-
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("bmiValue", String.valueOf(bmiValue));
+                params.put("pregnancy", String.valueOf(pregnancy));
+                params.put("age", String.valueOf(age));
+                params.put("glucose", String.valueOf(glucose));
+                params.put("pressure", String.valueOf(pressure));
+                return params;
             }
-        });
+        };
+        queue.add(postRequest);
     }
 
 }
+
 
 
 

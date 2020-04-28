@@ -12,19 +12,19 @@ app = Flask(__name__)
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
 
-	d = predict()
-
-	# Get values from browser
-	# preg = request.args['pregnancies']
-	# glucose = request.args['glucose']
-	# bp = request.args['bloodpressure']
-	# bmi = request.args['bmi']
-	# age = request.args['age']
-	testData = np.array([d]).reshape(1,5)
+	preg = request.values.get("pregnancy")
+	bmi = request.values.get("bmiValue")
+	age = request.values.get("age")
+	glucose = request.values.get("glucose")
+	bp = request.values.get("pressure")
+	
+	
+	testData = np.array([preg, bmi, age, glucose, bp]).reshape(1,5)
 	class_prediced = int(model.predict(testData)[0])
-	output = "Predicted prediabetic Class: " + str(class_prediced)
-
-	return jsonify(output)
+	output = "Predicted Pre diabetic Class: " + str(class_prediced)
+	
+	return (output)
+	
 	
 # Load the pre-trained and persisted SVM model
 # Note: The model will be loaded only once at the start of the server
@@ -41,4 +41,4 @@ if __name__ == "__main__":
 	load_model()
 	
 	# Run Server
-	app.run()
+	app.run(host="0.0.0.0")

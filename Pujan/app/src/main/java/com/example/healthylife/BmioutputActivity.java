@@ -13,11 +13,13 @@ public class BmioutputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmioutput);
+
         final TextView tv4 = (TextView) findViewById(R.id.tv4);
 
         String value = getIntent().getStringExtra("key");
 
         tv4.setText(value);
+
 
 
     }
